@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    tools:context=".HomeFragment">
+
+    <!-- Earnings and Total Balance -->
+    <LinearLayout
+        android:id="@+id/earnings_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/earnings_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earnings"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Balance"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Wallet Icon and Amount -->
+    <LinearLayout
+        android:id="@+id/wallet_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp">
+        <ImageView
+            android:id="@+id/wallet_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/wallet_icon"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/wallet_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- Rectangular Box -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangular_box"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/wallet_layout"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/earnings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earnings is"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="April"
+                android:textSize="16sp"
+                android:textColor="#dc143c"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/earnings_text"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/earnings_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₱0.00"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#dc143c"
+                android:layout_below="@id/earnings_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="22dp"/>
+
+            <ImageView
+                android:id="@+id/bar_chart_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bar_chart_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Square Boxes below the CardView -->
+    <LinearLayout
+        android:id="@+id/left_right_square_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rectangular_box"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/in_stocks_box"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/in_stocks_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Stocks"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/box_icon"
+                    android:layout_below="@+id/in_stocks_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/orders_box"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/orders_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orders"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ticket_icon"
+                    android:layout_below="@+id/orders_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- Recent Transactions Text -->
+    <TextView
+        android:id="@+id/recent_transactions_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent Transactions"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/left_right_square_box"
+        android:layout_marginTop="30dp" />
+
+    <!-- ScrollView for Recent Transactions -->
+    <ScrollView
+        android:id="@+id/recent_transactions_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recent_transactions_text"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/recent_transactions_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Example Transaction Item One -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/transaction_item_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/payment_from_text_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment from John Doe"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/payment_amount_text_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱1000.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#dc143c"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_date_text_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="April 25, 2023"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_from_text_one"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_time_text_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10:00 AM"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_amount_text_one"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Add more transaction items here, following the same structure as the above example -->
+            <!-- Example Transaction Item Two -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/transaction_item_card_view_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/payment_from_text_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment from Jane Smith"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/payment_amount_text_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱500.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#dc143c"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_date_text_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="April 24, 2023"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_from_text_two"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_time_text_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09:00 AM"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_amount_text_two"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Example Transaction Item Three -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/transaction_item_card_view_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/payment_from_text_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment from John Lawrence"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/payment_amount_text_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱600.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#dc143c"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_date_text_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="February 18, 2023"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_from_text_three"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_time_text_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="03:00 PM"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_amount_text_three"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Example Transaction Item Four -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/transaction_item_card_view_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/payment_from_text_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment from Eliza Doe"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/payment_amount_text_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱300.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#dc143c"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_date_text_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="June 22, 2023"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_from_text_four"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_time_text_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09:00 AM"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_amount_text_four"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Example Transaction Item Five -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/transaction_item_card_view_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/payment_from_text_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment from John Smith"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/payment_amount_text_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₱200.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#dc143c"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_date_text_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="May 16, 2023"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_from_text_five"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/payment_time_text_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="07:00 PM"
+                        android:textSize="12sp"
+                        android:layout_below="@id/payment_amount_text_five"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

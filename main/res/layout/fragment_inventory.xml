@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".InventoryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal">
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bar_shadow"
+            android:drawableLeft="@drawable/baseline_search_24"
+            android:drawablePadding="16dp"
+            android:hint="Search"
+            android:padding="16dp"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Rectangle Box -->
+        <RelativeLayout
+            android:id="@+id/rectangle_box"
+            android:layout_width="400dp"
+            android:layout_height="150dp"
+            android:background="@drawable/rectangle_box_shadow"
+            android:layout_gravity="center_horizontal">
+
+            <!-- LinearLayout for Icons and Texts -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Left Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <!-- Left Icon -->
+                    <ImageView
+                        android:id="@+id/out_of_stock_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/out_of_stock_icon"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Left Text -->
+                    <TextView
+                        android:id="@+id/left_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Out of Stock"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <!-- Center Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <!-- Center Icon -->
+                    <ImageView
+                        android:id="@+id/low_stock_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/low_stock_icon"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Center Text -->
+                    <TextView
+                        android:id="@+id/center_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Low Stock"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <!-- Right Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <!-- Right Icon -->
+                    <ImageView
+                        android:id="@+id/high_stock_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/high_stock_icon"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Right Text -->
+                    <TextView
+                        android:id="@+id/right_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="High Stock"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!-- Add other UI elements here -->
+
+</RelativeLayout>
